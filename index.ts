@@ -1,4 +1,4 @@
-const {Restaurant} = require('./restaurant');
+import {Restaurant} from "./restaurant";
 
 const megaRestaurant = new Restaurant();
 let tablesCount = 25;
@@ -21,7 +21,6 @@ megaRestaurant
 // .on("takeTableWithoutReservation", ww=>(tablesCount - ww))
 // .on("takeTableWithoutReservation", ww=>(tablesCount - ww))
 // .on("cleanupTable", ct=>(tablesCount - ct))
-
 
 // console.log(tablesCount)
 
