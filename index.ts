@@ -1,26 +1,22 @@
 import {Restaurant} from "./restaurant";
+import {RestaurantEventName} from "./types/table-events";
 
 const megaRestaurant = new Restaurant();
 let tablesCount = 25;
 // Tutaj dodaj nasłuchiwanie
 
-megaRestaurant
-    .on("OpenRestaurant", () => console.log("RESTAURANT OPEN!"))
-    .on("closeRestaurant", () => console.log("RESTAURANT CLOSEED"))
-    .on('tablesCountUpdate',  change => {
-        tablesCount += change;
-        console.log(`Dostepnych stolikow ${tablesCount}`)
-    });
+const reset = "\x1b[0m";
+const green = "\x1b[32m";
+const red = "\x1b[31m";
+const yellow = "\x1b[33m"
 
-// .on("takeTableWithoutReservation", ww=>(tablesCount += ww))
-// .on("takeTableWithoutReservation", ww=>(tablesCount - ww))
-// .on("reserveTable", rt=>(tablesCount-rt))
-// .on("cancelTableReservation", cr=>tablesCount+cr)
-// .on("reserveTable", rt=>(tablesCount-rt))
-// .on("reserveTable", rt=>(tablesCount-rt))
-// .on("takeTableWithoutReservation", ww=>(tablesCount - ww))
-// .on("takeTableWithoutReservation", ww=>(tablesCount - ww))
-// .on("cleanupTable", ct=>(tablesCount - ct))
+megaRestaurant
+    .on(RestaurantEventName.Open, () => console.log(green, 'RESTAURANT OPEN! \n',reset))
+    .on(RestaurantEventName.Close, () => console.log(red, "\n RESTAURANT CLOSEED \n", reset))
+    .on(RestaurantEventName.Update,  change => {
+        tablesCount += change;
+        console.log(yellow, `Dostepnych stolikow ${tablesCount}`, reset)
+    });
 
 // console.log(tablesCount)
 
