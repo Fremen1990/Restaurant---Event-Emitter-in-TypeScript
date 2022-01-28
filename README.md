@@ -13,31 +13,35 @@
   
 - [x] create tsconfig.json and setup as below:
 
-- {
-"compilerOptions": {
-"noImplicitAny": true,
-"preserveConstEnums": true,
-"sourceMap": true,
-"target": "es6",
-"downlevelIteration": true,
-"lib": [
-//      "dom",
-"es6",
-"dom.iterable"
-],
-"outDir": "dist",
-"experimentalDecorators": true,
-"emitDecoratorMetadata": true,
-}
-}
 
+```
+ {
+"compilerOptions": {
+  "noImplicitAny": true,
+  "preserveConstEnums": true,
+  "sourceMap": true,
+  "target": "es6",
+  "downlevelIteration": true,
+  "lib": [
+    // "dom",
+    "es6",
+    "dom.iterable"
+     ],
+  "outDir": "dist",
+  "experimentalDecorators": true,
+  "emitDecoratorMetadata": true,
+  }
+}
+```
 
 - [x] Create scripts for TypeScript run:
-- "scripts": {
+
+```  
+ "scripts": {
   "start": "ts-node index.ts",
   "start:dev": "tsnd index.ts"
-  },
-
+  }
+```
 
 
 <img src="resultsV2.PNG">
